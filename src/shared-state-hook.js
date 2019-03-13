@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 /* Forked from: /github.com/mvolkmann/top-state-hook */
 
@@ -18,19 +18,18 @@ export default function useSharedState(name, initialValue, notifier) {
 
   if (!state) {
     const setValue = pvalue => {
-        let value = pvalue
-        if(typeof pvalue == 'function'){
-            value = pvalue(state.value)
+      let value = pvalue;
+      if (typeof pvalue == 'function') {
+        value = pvalue(state.value);
+      }
+      if (value !== state.value) {
+        if (isObject(value)) {
+          state.value = {...state.value, ...value};
+        } else {
+          state.value = value;
         }
-        if (value !== state.value) {
-            if (isObject(value)) {
-                state.value = {...state.value, ...value};
-            } else {
-                state.value = value;
-            }
-            state.updaters.forEach(fn => fn(value));
-        }
-
+        state.updaters.forEach(fn => fn(value));
+      }
     };
 
     state = {
