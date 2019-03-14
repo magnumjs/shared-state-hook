@@ -1,6 +1,6 @@
 {
   "name": "shared-state-hook",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "React Hook to share state without passing props or hierarchies",
   "license": "MIT",
   "repository": "magnumjs/shared-state-hook",
