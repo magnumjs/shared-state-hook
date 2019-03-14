@@ -18,4 +18,6 @@ test('counter has the previous states value', () => {
     const {container} = render(<Counter />)
     const button = container.firstChild
     expect(button.textContent).toBe('4')
+    fireEvent.click(button)
+    expect(button.textContent).toBe('5')
 })

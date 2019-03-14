@@ -19,7 +19,6 @@
     "prepare": "webpack --config config/webpack.prod.config",
     "format": "prettier --write 'src/**/*.{js,scss}'",
     "lint": "eslint --quiet src --ext .js",
-    "prepush": "npm run verify",
     "test": "jest",
     "verify": "npm-run-all format lint",
     "verify-save": "npm-run-all format lint test"
@@ -70,5 +69,10 @@
   "peerDependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run verify"
+    }
   }
 }
