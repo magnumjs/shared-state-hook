@@ -15,6 +15,10 @@ export default function useHooksOutside(callback) {
     return null;
   };
 
+  const rElement =React.createElement(Component, {})
+
   // create fake Element when not in React
-  ReactDOM.render(React.createElement(Component, {}), vElement);
+  ReactDOM.render(rElement, vElement);
+
+  return rElement
 }
