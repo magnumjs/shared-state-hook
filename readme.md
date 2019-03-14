@@ -20,6 +20,7 @@ $ npm install shared-state-hook
 ```html
 <script src="//unpkg.com/shared-state-hook"></script>
 ```
+[https://unpkg.com/shared-state-hook](https://unpkg.com/shared-state-hook)
 
 ## Example
 
@@ -54,7 +55,7 @@ const CounterApp2 = props => <Counter count={2}/>
 import {useSharedState} from "shared-state-hook"
 
 const Component = props => {
-const [userInfo, setUserInfo] = useSharedState("userInfo", initialValues)
+const [userInfo, setUserInfo] = useSharedState("userInfo", optionalInitialValue, optionalOnUpdatesCallback)
 return ""
 }
 //=> "!"
