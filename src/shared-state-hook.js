@@ -45,11 +45,11 @@ export default function useSharedState(name, initialValue, notifier) {
   state.updaters.add(setState);
 
   //remove on unmounting
-    useEffect(()=>{
-        return ()=>{
-            state.updaters.delete(setState)
-        }
-    })
+  useEffect(() => {
+    return () => {
+      state.updaters.delete(setState);
+    };
+  });
 
   return [state.value, state.setValue];
 }
