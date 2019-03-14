@@ -1,6 +1,6 @@
 // counter.js
 import React from 'react'
-import useSharedState from '../src/index'
+import {useSharedState} from '../src/main'
 
 const Counter = props => {
     const {initialVal} = props
