@@ -79,5 +79,21 @@ const ReactElement = useHooksOutside(()=>{
 //=> "!"
 ```
 
+You can initialize `useSharedState` from `useHooksOutside` as a external Provider that will both update the shared state by others as well as get notified if anyone else updates the same `name` share
 
+```js
+let notifier
+const rel = useHooksOutside(() => {
+  const onUpdate = updates => {
+    $scope.user = {
+        ...$scope.user, ...updates
+    }
+    $scope.$apply()
+  }
+  
+  const [, setUser] = useSharedState("user", $scope.user, onUpdate)
+  notifier=setUser    
+})
+```
+<hr>
 Forked from <a href="https://github.com/mvolkmann/top-state-hook">top-state-hook</a>
