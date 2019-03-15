@@ -1,4 +1,4 @@
-import {useState, useEffect, useMemo} from 'react';
+import {useState, useEffect} from 'react';
 
 /* Forked from: /github.com/mvolkmann/top-state-hook */
 
