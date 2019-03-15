@@ -4,11 +4,12 @@
   "description": "React Hook to share state without passing props or hierarchies",
   "license": "MIT",
   "repository": "magnumjs/shared-state-hook",
-  "main": "dist/main.js",
+  "main": "lib/main.js",
   "author": "https://github.com/magnumjs",
   "unpkg": "dist/shared-state-hook.min.js",
   "files": [
     "dist",
+    "lib",
     "!dist/index.html"
   ],
   "keywords": [
@@ -19,7 +20,7 @@
     "hooks"
   ],
   "scripts": {
-    "build": "webpack  --config config/webpack.lib.config && webpack  --config config/webpack.prod.config",
+    "build": "babel src -d lib && webpack  --config config/webpack.prod.config",
     "prepare": "npm run build",
     "format": "prettier --write 'src/**/*.{js,scss}'",
     "lint": "eslint --quiet src --ext .js",
@@ -37,6 +38,7 @@
     "@babel/polyfill": "^7.2.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
