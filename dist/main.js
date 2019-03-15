@@ -180,11 +180,11 @@ function useSharedState(name, initialValue, notifier) {
     };
     stateMap[name] = state;
     if (notifier) state.updaters.add(notifier);
-  }
+  } //remove on unmounting
 
-  state.updaters.add(setState); //remove on unmounting
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    state.updaters.add(setState);
     return function () {
       state.updaters.delete(setState);
     };
