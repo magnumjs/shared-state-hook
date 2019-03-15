@@ -47,7 +47,7 @@ const CounterApp1 = props => <Counter count={1}/>
 const CounterApp2 = props => <Counter count={2}/>
 ```
 
-[Try it on JSBin](https://jsbin.com/reduregace/edit?html,js,output) - [CodeSandBox](https://codesandbox.io/s/mz0m7m0rp8)
+[Try it on JSBin](https://jsbin.com/reduregace/edit?html,js,output) - [CodeSandBox](https://codesandbox.io/s/zl509roppm)
 
 ## API
 
