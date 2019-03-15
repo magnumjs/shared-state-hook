@@ -9,8 +9,7 @@ function isObject(value) {
 
 const stateMap = {};
 
-const copy = val => isObject(val) ? Object.assign({}, val): val
-
+const copy = val => (isObject(val) ? Object.assign({}, val) : val);
 
 export default function useSharedState(name, initialValue, notifier) {
   // Get a function that can be called later
@@ -21,11 +20,11 @@ export default function useSharedState(name, initialValue, notifier) {
 
   if (!state) {
     const setValue = pvalue => {
-      let temp
+      let temp;
       if (typeof pvalue == 'function') {
         temp = pvalue(state.value);
       }
-       let value = copy(temp?temp:pvalue)
+      let value = copy(temp ? temp : pvalue);
 
       if (value !== state.value) {
         if (isObject(value)) {
