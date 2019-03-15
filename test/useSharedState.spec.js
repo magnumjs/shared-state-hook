@@ -20,4 +20,6 @@ test('counter has the previous states value', () => {
     expect(button.textContent).toBe('4')
     fireEvent.click(button)
     expect(button.textContent).toBe('5')
+    fireEvent.click(button)
+    expect(button.textContent).toBe('6')
 })
