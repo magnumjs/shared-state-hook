@@ -26,6 +26,8 @@ $ npm install shared-state-hook
 
 
 ```js
+import {useSharedState} from 'shared-state-hook'
+
 const Counter = props => {
   
  const [count, setCount] = useSharedState("counter", props.count)
@@ -45,7 +47,7 @@ const CounterApp1 = props => <Counter count={1}/>
 const CounterApp2 = props => <Counter count={2}/>
 ```
 
-[Try it on JSBin](https://jsbin.com/reduregace/edit?html,js,output)
+[Try it on JSBin](https://jsbin.com/reduregace/edit?html,js,output) - [CodeSandBox](https://codesandbox.io/s/mz0m7m0rp8)
 
 ## API
 
@@ -75,7 +77,8 @@ const ReactElement = useHooksOutside(()=>{
     //Call any restricted React Hook outside of a component function body! 
     useState()
     useEffect()
-    useRef()
+    useContext()
+    useSharedState("userInfo", initialValues)
 });
 //=> "!"
 ```
@@ -97,4 +100,5 @@ const rel = useHooksOutside(() => {
 })
 ```
 <hr>
+
 Forked from <a href="https://github.com/mvolkmann/top-state-hook">top-state-hook</a>
