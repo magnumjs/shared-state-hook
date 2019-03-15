@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 
 /* Forked from: /github.com/mvolkmann/top-state-hook */
 
@@ -48,7 +48,7 @@ export default function useSharedState(name, initialValue, notifier) {
     return () => {
       state.updaters.delete(setState);
     };
-  });
+  }, [state.value]);
 
   return [state.value, state.setValue];
 }
