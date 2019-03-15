@@ -41,14 +41,14 @@ export default function useSharedState(name, initialValue, notifier) {
     stateMap[name] = state;
     if (notifier) state.updaters.add(notifier);
   }
-    
+
   //remove on unmounting
   useEffect(() => {
-      state.updaters.add(setState);
-      return () => {
+    state.updaters.add(setState);
+    return () => {
       state.updaters.delete(setState);
-    }
-  })
+    };
+  });
 
   return [state.value, state.setValue];
 }
