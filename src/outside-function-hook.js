@@ -6,19 +6,17 @@ const vElement = {
   tagName: 'b',
   childNodes: [],
   style: {}
-};
+}
 
 export default function useHooksOutside(callback) {
+  let response
   const Component = () => {
-    callback();
+    response =callback()
 
-    return null;
-  };
-
-  const rElement = React.createElement(Component, {});
-
+    return null
+  }
   // create fake Element when not in React
-  ReactDOM.render(rElement, vElement);
+  ReactDOM.render(React.createElement(Component, {}), vElement)
 
-  return rElement;
+  return response
 }
