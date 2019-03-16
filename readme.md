@@ -73,12 +73,12 @@ Invariant React Error 307
 ```js
 import {useHooksOutside} from "shared-state-hook"
 
-const ReactElement = useHooksOutside(()=>{
+const callbackReturnValue = useHooksOutside(()=>{
     //Call any restricted React Hook outside of a component function body! 
     useState()
     useEffect()
     useContext()
-    useSharedState("userInfo", initialValues)
+    return useSharedState("userInfo", initialValues)
 });
 //=> "!"
 ```
