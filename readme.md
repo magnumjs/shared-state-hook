@@ -1,7 +1,7 @@
 # shared-state-hook
 
 [![npm (scoped)](https://img.shields.io/npm/v/shared-state-hook.svg)](https://www.npmjs.com/package/shared-state-hook)
-[![npm bundle size (minified)](https://img.shields.io/github/size/magnumjs/shared-state-hook/dist/shared-state-hook.min.js.svg)](https://unpkg.com/shared-state-hook)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/minzip/shared-state-hook.svg)](https://unpkg.com/shared-state-hook)
 
 This is a module for <a href="https://reactjs.org/docs/hooks-intro.html">React</a> that implements a hook named `useSharedState` for managing application state. 
 It is similar to the provided hook `useState`, but rather than associating the state with the component that uses the hook,
